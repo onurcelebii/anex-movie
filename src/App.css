@@ -1,0 +1,337 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: #ffffff;
+}
+
+.center-max-size {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  display: inline-flex;
+}
+
+.poster {
+  background-size: cover;
+  background-position: top center;
+  min-height: 600px;
+  /* display: flex; */
+  align-items: flex-end;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.poster-content {
+  width: 60%;
+}
+
+h1 {
+  font-size: 92px;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.container {
+  background-color: white;
+  padding-top: 45px;
+  padding-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+
+.button {
+  background: #BE123C;
+  color: white;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin-top: 15px;
+}
+
+.button:hover {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.close-video {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  left: 10px;
+}
+
+.youtube-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: xx-large;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.movie {
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+}
+
+.movie img {
+  height: 355px;
+  max-width: 100%;
+}
+
+.movie-infos {
+  padding: 15px 0;
+}
+
+.movie-title {
+  margin: 0;
+  color: black;
+  margin-top: -15px;
+  font-weight: bold;
+}
+
+.movie-title {
+  margin: 0;
+  color: black;
+  margin-top: -15px;
+  font-weight: bold;
+}
+
+.production-countries {
+  color: #9CA3AF;
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+
+/* .movie-voting {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: #0F1014;
+  border: 1px solid gray;
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 25px;
+  color: white;
+} */
+
+.form {
+  position: relative;
+}
+
+.search {
+  border: 1px solid white;
+  /* outline: transparent; */
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: white;
+  width: 200%;
+}
+
+.submit-search {
+  /* position: absolute; */
+  right: 5px;
+  top: 5px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  float: right;
+}
+
+.search-icon {
+  margin-right: 70px;
+  top: 20%;
+  transform: translate(2200%, -170%);
+}
+
+.movie-box {
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.tv-icon {
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  color: #BE123C;
+}
+
+.popup-content {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.popup-content-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.search-popup-img {
+  width: 70px;
+}
+
+.search-popup {
+  display: flex;
+}
+
+.imdb-container {
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.header-imdb {
+  display: flex;
+  align-items: center;
+}
+
+.watch-trailer-title {
+  display: flex;
+  align-items: center;
+}
+
+.watch-trailer-icon {
+  margin-right: 5px;
+}
+
+.header-imdb-icon {
+  width: 35px;
+  height: 50px;
+  margin-right: 10px;
+  color: #fcc400;
+}
+
+.imdb-icon {
+  width: 35px;
+  height: 50px;
+  margin-right: 10px;
+  color: #fcc400;
+
+}
+
+.imdb-rating {
+  margin-right: 10px;
+  font-weight: lighter;
+}
+
+.genres-container {
+  color: #9CA3AF;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.featured-movie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  font-size: x-large;
+  padding: 0 450px;
+}
+
+.see-more-container {
+  display: flex;
+  align-items: center;
+  font-size: small;
+}
+
+
+.see-more-button {
+  color: #c7171a;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  margin-left: 5px;
+}
+
+.popup {
+  position: absolute;
+  /* bottom: -100%; */
+  /* Adjust as necessary */
+  left: 0;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  color: black;
+  width: 200%;
+  margin-top: 5px;
+  background-color: #D9D9D9;
+  cursor: pointer;
+}
+
+.upcoming-movie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  font-size: x-large;
+  padding: 0 450px;
+}
+
+.youtube-video-container {
+  margin-top: 20px;
+}
+
+.arrow-button {
+  font-size: 30px;
+  padding: 10px 20px;
+  color: #6B7280;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.arrow-button:hover {
+  background-color: white;
+  color: #4caf50;
+  border-color: #4caf50;
+}
+
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1220px;
+  /* Adjust as needed */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media screen and (min-width: 768px) {}
