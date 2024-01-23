@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t, i18n } = useTranslation();
   const iconColor = "#111827";
 
   return (
@@ -50,9 +52,9 @@ export const Footer = () => {
         </div>
         <div className="flex flex-col items-center">
           <div className="flex font-bold">
-            <div className="mr-8 text-black">Conditions of Use</div>
-            <div className="mr-8 text-black">Privacy & Policy</div>
-            <div className="text-black">Press Room</div>
+            <div className="mr-8 text-black">{t("conditions_of_use")}</div>
+            <div className="mr-8 text-black">{t("privacy_policy")}</div>
+            <div className="text-black">{t("press_room")}</div>
           </div>
         </div>
       </div>

@@ -9,6 +9,8 @@ import { FaCirclePlay } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import Footer from "./components/Footer";
+import { useTranslation } from "react-i18next";
+import i18n from "./i18n";
 
 function App() {
   const API_KEY = "8f46844674bfd02f0ea39744e7e9f337";
@@ -36,11 +38,17 @@ function App() {
   const popupRef = useRef(null);
   let navigate = useNavigate();
 
+  const { t, i18n } = useTranslation();
+
+  const clickHandle = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   useEffect(() => {
     fetchMovies();
     fetchUpcomingMovies();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [i18n.language]);
 
   const fetchMovies = async (searchValue = searchKey) => {
     try {
@@ -66,9 +74,9 @@ function App() {
       }
 
       if (searchValue) {
-        setSearchResultsTitle("Search Results");
+        setSearchResultsTitle(t("search_results_title"));
       } else {
-        setSearchResultsTitle("Featured Movies");
+        setSearchResultsTitle(t("featured_movies_title"));
       }
     } catch (error) {
       console.error("Error fetching movies:", error);
@@ -114,7 +122,6 @@ function App() {
       }
 
       setData(data);
-      // console.log(data);
     } catch (error) {
       console.error("Error fetching movie:", error);
     }
@@ -193,7 +200,6 @@ function App() {
       });
 
       if (data.results.length > 0) {
-        // console.log(data.results[0])
         setPopupContent(data.results[0]);
         setShowPopup(true);
       } else {
@@ -269,12 +275,12 @@ function App() {
                     onClick={() => window.location.reload()}
                   >
                     <PiTelevisionSimpleBold className="tv-icon mr-2" />
-                    MovieBox
+                    {t("movieBox")}
                   </span>
                 </div>
                 <form className="form relative">
                   <input
-                    placeholder="Search"
+                    placeholder={t("search")}
                     className="search border border-white bg-transparent px-10 py-5 rounded-6 text-white w-200"
                     type="text"
                     id="search"
@@ -329,6 +335,10 @@ function App() {
                   </button>
                 </form>
               </header>
+              <div className="language-button">
+                <button onClick={() => clickHandle("en")}>English</button>
+                <button onClick={() => clickHandle("de")}>Deutsch</button>
+              </div>
               {playing ? (
                 <>
                   <Youtube
@@ -355,7 +365,7 @@ function App() {
                     onClick={() => setPlaying(false)}
                     className="button close-video"
                   >
-                    Close
+                    {t("close")}
                   </button>
                 </>
               ) : (
@@ -378,7 +388,7 @@ function App() {
                         >
                           <span className="watch-trailer-title flex items-center">
                             <FaCirclePlay className="watch-trailer-icon mr-2" />
-                            Watch Trailer
+                            {t("watch_trailer")}
                           </span>
                         </button>
                       </>
@@ -400,7 +410,7 @@ function App() {
                     onClick={handleSeeMore}
                     className="see-more-button text-c7171a border-none px-10 cursor-pointer flex items-center"
                   >
-                    See More <span className="arrow ml-1">&#10140;</span>
+                    {t("see_more")} <span className="arrow ml-1">&#10140;</span>
                   </button>
                 </div>
               )}
@@ -429,14 +439,14 @@ function App() {
 
           <div>
             <div className="featured-movie">
-              <span id="result-title">New Arrival</span>
+              <span id="result-title">{t("new_arrival")}</span>
               {visibleMovies < movies.length && (
                 <div className="see-more-container">
                   <button
                     onClick={handleUpcomingSeeMore}
                     className="see-more-button text-c7171a border-none px-10 cursor-pointer flex items-center"
                   >
-                    See More <span className="arrow ml-1">&#10140;</span>
+                    {t("see_more")} <span className="arrow ml-1">&#10140;</span>
                   </button>
                 </div>
               )}

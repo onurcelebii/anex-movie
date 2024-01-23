@@ -1,6 +1,7 @@
 import { FaImdb } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const Movie = ({ movie, selectMovie }) => {
   const MOVIE_API = "https://api.themoviedb.org/3/";
@@ -9,8 +10,7 @@ const Movie = ({ movie, selectMovie }) => {
 
   const releaseYear = movie.release_date.split("-")[0];
   const [data, setData] = useState(null);
-
-  // console.log(data);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -37,13 +37,13 @@ const Movie = ({ movie, selectMovie }) => {
         {movie.poster_path ? (
           <img src={IMAGE_PATH + movie.poster_path} alt={movie.title} />
         ) : (
-          <p>No movie poster found</p>
+          <p>{t("no_movie_poster_found")}</p>
         )}
         <h6 className="production-countries">
           {releaseYear !== undefined ? (
             <span>{releaseYear}</span>
           ) : (
-            <p>Vizyon yılı bulunamadı</p>
+            <p>{t("release_year_not_found")}</p>
           )}
           {","}
           {data?.production_countries &&
@@ -57,7 +57,7 @@ const Movie = ({ movie, selectMovie }) => {
               ))}
             </>
           ) : (
-            <p>Üretim ülkeleri bulunamadı</p>
+            <p>{t("production_countries_not_found")}</p>
           )}
         </h6>
 
@@ -70,7 +70,7 @@ const Movie = ({ movie, selectMovie }) => {
           {movie.vote_average ? (
             <h5 className="imdb-rating">{movie.vote_average.toFixed(1)}</h5>
           ) : (
-            <p className="imdb-rating">IMDb puanı bulunamadı</p>
+            <p>{t("imdb_not_found")}</p>
           )}
         </div>
 
@@ -80,7 +80,7 @@ const Movie = ({ movie, selectMovie }) => {
               <p>{data.genres.map((genre) => genre.name).join(", ")}</p>
             </div>
           ) : (
-            <p className="genres-container">Tür bulunamadı</p>
+            <p className="genres-container">{t("genres_not_found")}</p>
           )}
         </div>
       </div>

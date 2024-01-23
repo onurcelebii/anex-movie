@@ -12,7 +12,15 @@ const resources = {
       search_results_title: "Search Result",
       featured_movies_title: "Featured Movie",
       see_more: "See More",
-      new_arrival: "New Arrival"
+      new_arrival: "New Arrival",
+      no_movie_poster_found: "No movie poster found",
+      release_year_not_found: "Release year not found",
+      production_countries_not_found: "Production countries not found",
+      imdb_not_found: "IMDb not found",
+      genres_not_found: "Genres not found",
+      conditions_of_use: "Conditions of Use",
+      privacy_policy: "Privacy & Policy",
+      press_room: "Press Room",
     },
   },
   de: {
@@ -25,7 +33,15 @@ const resources = {
       search_results_title: "Suchergebnis",
       featured_movies_title: "Ausgewählter Film",
       see_more: "Mehr sehen",
-      new_arrival: "Neuankömmling"
+      new_arrival: "Neuankömmling",
+      no_movie_poster_found: "Kein Filmplakat gefunden",
+      release_year_not_found: "Erscheinungsjahr nicht gefunden",
+      production_countries_not_found: "Produktionsländer nicht gefunden",
+      imdb_not_found: "IMDb-Score nicht gefunden",
+      genres_not_found: "Genre nicht gefunden",
+      conditions_of_use: "Nutzungsbedingungen",
+      privacy_policy: "Datenschutzrichtlinie",
+      press_room: "Presseraum",
     },
   },
 };
