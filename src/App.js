@@ -393,7 +393,7 @@ function App() {
                         </button>
                       </>
                     ) : (
-                      "Sorry, no trailer available"
+                      <div>{t("no_trailer_avaible")}</div>
                     )}
                   </div>
                 </div>
@@ -474,7 +474,7 @@ function App() {
           </div>
         </main>
       ) : (
-        "Sorry, no movies found"
+        <div>{t("no_movie_found")}</div>
       )}
       <Footer />
     </div>

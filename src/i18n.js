@@ -21,6 +21,8 @@ const resources = {
       conditions_of_use: "Conditions of Use",
       privacy_policy: "Privacy & Policy",
       press_room: "Press Room",
+      no_trailer_avaible: "Sorry, no trailer available",
+      no_movie_found: "Sorry, no movies found",
     },
   },
   de: {
@@ -42,6 +44,8 @@ const resources = {
       conditions_of_use: "Nutzungsbedingungen",
       privacy_policy: "Datenschutzrichtlinie",
       press_room: "Presseraum",
+      no_trailer_avaible: "Leider ist kein Trailer verfügbar",
+      no_movie_found: "Leider wurden keine Filme gefunden",
     },
   },
 };
